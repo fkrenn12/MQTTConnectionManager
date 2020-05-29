@@ -76,9 +76,8 @@ class Mqtt:
                     finally:
                         del self.__tunnel
                 # checking need of ssh tunnel
-                if self.__host is not "" and \
-                        self.__ssh_pass is not "" and \
-                        self.__ssh_user is not "":
+                if self.__ssh_pass is not "" and self.__ssh_pass is not None and \
+                        self.__ssh_user is not "" and self.__ssh_user is not None:
                     self.__use_tunnel = True
                     self.__connection_manager_state = State.CREATING_TUNNEL
                 else:
