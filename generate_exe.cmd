@@ -1,0 +1,1 @@
+pyinstaller test_mqtt_connection.py --onefile

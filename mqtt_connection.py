@@ -83,8 +83,8 @@ class Mqtt:
                     finally:
                         del self.__tunnel
                 # checking need of ssh tunnel
-                if self.__ssh_pass is not "" and self.__ssh_pass is not None and \
-                        self.__ssh_user is not "" and self.__ssh_user is not None:
+                if self.__ssh_pass != "" and self.__ssh_pass is not None and \
+                        self.__ssh_user != "" and self.__ssh_user is not None:
                     self.__use_tunnel = True
                     self.__connection_manager_state = State.CREATING_TUNNEL
                 else:
@@ -96,6 +96,7 @@ class Mqtt:
             elif self.__connection_manager_state == State.CREATING_TUNNEL:
                 try:
                     self.__tunnel = SSHTunnelForwarder(ssh_address_or_host=self.__host,
+                                                       ssh_port=250,
                                                        # ssh_username="fool",  # self.__ssh_user,
                                                        ssh_username=self.__ssh_user,
                                                        ssh_password=self.__ssh_pass,

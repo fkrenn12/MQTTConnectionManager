@@ -49,8 +49,8 @@ try:
     '''
     # test without tunnel
     mqttclient = mqtt.Mqtt(host="94.16.117.246",
-                           # ssh_user=config.ssh_tunnel["User"],
-                           # ssh_pass=config.ssh_tunnel["Password"],
+                           ssh_user="fx_signal_provider",
+                           ssh_pass="fx_signal_provider_246",
                            mqtt_user="labor",
                            mqtt_pass="labor")
 
